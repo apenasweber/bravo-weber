@@ -30,5 +30,17 @@ services:
         volumes:
             - postgres-db:/var/lib/postgresql/data
 
+    coinbase_data_feeder:
+        build:
+            context: ./app/coinbase_data_feeder
+            dockerfile: ./Dockerfile.coinbase
+        depends_on:
+            - postgres
+        restart: always
+        container_name: coinbase_data_feeder
+        env_file:
+            - ./.env
+        volumes:
+            - ./coinbase_data_feeder:/coinbase_data_feeder
 volumes:
     postgres-db:
