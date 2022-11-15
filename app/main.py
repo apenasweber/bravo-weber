@@ -1,10 +1,8 @@
 from fastapi import FastAPI, status
-from app.routers import currency
+
+from app.routers import convert, currency
 
 app = FastAPI()
+
 app.include_router(currency.router)
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.include_router(convert.router)
