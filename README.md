@@ -14,6 +14,28 @@ Obs.: após o fim do código percebi que para repositórios privados precisavamo
 | Pytest        | Framework de testes unitários python|
 | Locust        | Framework para testes de carga python|
 
+## Como rodar a aplicação
+### Requisitos para execução:
+1. Docker/docker-compose
+2. Renomeie o arquivo ".env.example" para ".env"
+
+### Passos para execução:
+1.   `git clone https://github.com/apenasweber/bravo-weber`
+2.  `cd challenge-bravo`
+3.  `docker-compose up --build`
+
+A aplicação também pode ser executada utilizando o make, com os seguintes comandos e auxiliares:
+|Ferramenta      | Motivo
+|----------------|-------------------------------|
+| `make build`      | Builda a aplicação e aplica migrations alembic |
+| `make run`      | Roda apenas container da api|
+| `make up`      | Roda toda aplicação(api, banco de dados e coinbase_feeder)|
+| `make down`      | Derruba a aplicação(api, banco de dados e coinbase_feeder)|
+| `make bash`      | Acessa o terminal bash do container api|
+| `make unit_tests`| Executa testes unitários |
+| `make isort`      | Aplica isort em todo repositório para ordenar imports |
+| `make black`      | Aplica o linter black |
+
 ## Testes
 Foram criados testes unitários cobrindo todos endpoints da aplicação, convert/currency.
 Para executa-los utilize no terminal, na raíz do projeto:
@@ -63,25 +85,4 @@ A documentação extensa de todo tipo de input e output pode ser encontrada em h
 ![stress tests results](app/docs_images/endpoints.png)
 
 
-## Como rodar a aplicação
-### Requisitos para execução:
-1. Docker/docker-compose
-2. Renomeie o arquivo ".env.example" para ".env"
-
-### Passos para execução:
-1.   `git clone https://github.com/apenasweber/bravo-weber`
-2.  `cd challenge-bravo`
-3.  `docker-compose up --build`
-
-A aplicação também pode ser executada utilizando o make, com os seguintes comandos e auxiliares:
-|Ferramenta      | Motivo
-|----------------|-------------------------------|
-| `make build`      | Builda a aplicação e aplica migrations alembic |
-| `make run`      | Roda apenas container da api|
-| `make up`      | Roda toda aplicação(api, banco de dados e coinbase_feeder)|
-| `make down`      | Derruba a aplicação(api, banco de dados e coinbase_feeder)|
-| `make bash`      | Acessa o terminal bash do container api|
-| `make unit_tests`| Executa testes unitários |
-| `make isort`      | Aplica isort em todo repositório para ordenar imports |
-| `make black`      | Aplica o linter black |
 
