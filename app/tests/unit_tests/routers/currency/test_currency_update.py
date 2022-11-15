@@ -38,7 +38,9 @@ def test_should_update_existing_currency_in_database(
     assert res_data["backed_by"] == updated_currency.backed_by
 
 
-def test_should_not_update_currency_not_found_in_db(client: TestClient, fictitious_currency_data_hurb: dict):
+def test_should_not_update_currency_not_found_in_db(
+    client: TestClient, fictitious_currency_data_hurb: dict
+):
     payload = fictitious_currency_data_hurb.copy()
     payload["rate"] = NEW_RATE
     updated_currency = CurrencyInput(**payload)

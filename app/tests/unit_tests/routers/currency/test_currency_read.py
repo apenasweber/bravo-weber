@@ -66,7 +66,9 @@ def test_should_not_get_non_existing_currency_in_db(client: TestClient):
     assert res.json()["detail"] == f"Currency code {currency_code} not found"
 
 
-def test_should_get_existing_currency_in_db(client: TestClient, create_hurb_currency: dict):
+def test_should_get_existing_currency_in_db(
+    client: TestClient, create_hurb_currency: dict
+):
     currency = Currency(**create_hurb_currency)
     res = client.get(f"/currency/{currency.currency_code}/")
     res_data = res.json()["data"]

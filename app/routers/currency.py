@@ -2,8 +2,12 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.schemas.currency import (CurrencyInput, CurrencyOut, CurrencyResponse,
-                                  MultipleCurrencyResponse)
+from app.schemas.currency import (
+    CurrencyInput,
+    CurrencyOut,
+    CurrencyResponse,
+    MultipleCurrencyResponse,
+)
 from app.services.currency import CurrencyService
 
 router = APIRouter(prefix="/currency", tags=["Currency"])
