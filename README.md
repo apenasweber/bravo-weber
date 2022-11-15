@@ -2,6 +2,8 @@
 
 Conforme repositório hurbcom/challenge-bravo, a API criada retorna JSON, para conversão monetária e ainda dados de diversas moedas como preço, código e ainda lastro com dados reais e atualizados a cada 60 segundos. 
 
+Obs.: após o fim do código percebi que para repositórios privados precisavamos fazer tudo na branch main como a documentação do desafio solicitava. Infelizmente para adequar acabei passando tudo para main e deletando as branches baseadas em gitflow.
+
 ## Stack utilizada
 |Ferramenta      | Motivo
 |----------------|-------------------------------|
