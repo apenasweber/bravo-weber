@@ -67,7 +67,7 @@ A documentação extensa de todo tipo de input e output pode ser encontrada em h
 2. Renomeie o arquivo ".env.example" para ".env"
 
 ### Passos para execução:
-1.   `git clone $seu-fork`
+1.   `git clone https://github.com/apenasweber/bravo-weber`
 2.  `cd challenge-bravo`
 3.  `docker-compose up --build`
 
